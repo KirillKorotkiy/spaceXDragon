@@ -8,6 +8,7 @@ export const Header = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: transparent;
 `;
 
 export const MainLogo = styled(Logo)`
