@@ -13,7 +13,14 @@ export const dragon = async () => {
 
 export const allDetailsDragon = async () => {
     const response = await axios.get(
-        `/dragons`
+        `dragons`
     );
     return response.data;
+}
+
+export const getDragonsById = async id => {
+  const response = await axios.get(
+    `dragons/${id}`
+  )
+    return response
 }
