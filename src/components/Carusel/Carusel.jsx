@@ -1,18 +1,16 @@
-import { Swiper, SwiperSlide } from 'swiper/react';
 import { useEffect, useState } from 'react';
-import { dragon } from 'services/fetchAPI';
 import 'swiper/css';
-
-
-export const Carusel = () => {
+import { Swipe, SlideSwiper } from './Carusel.styled';
+export const Carusel = ({dragon}) => {
     const [slides, setSlides] = useState('');
 
     useEffect(()=>{
-        dragon().then(({ flickr_images }) => setSlides(flickr_images)).catch((error)=> console.log(error));
-    }, [])
+      dragon &&
+      setSlides(dragon.data.flickr_images)
+    }, [dragon])
     
     return(
-        <Swiper
+        <Swipe 
         spaceBetween={50}
         slidesPerView={1}
         onSlideChange={() => console.log('slide change')}
@@ -21,11 +19,11 @@ export const Carusel = () => {
         {slides &&
           slides.map(item => {
             return (
-            <SwiperSlide className='swipe-slide' key={item}>
+            <SlideSwiper key={item}>
             <img className="slide-img" src={item} alt="" key={item} />
-            </SwiperSlide>
+            </SlideSwiper>
             )
           })}
-      </Swiper>
+      </Swipe>
     )
 }

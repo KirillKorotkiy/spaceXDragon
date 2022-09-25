@@ -1,14 +1,25 @@
-import { useGetDragonsById } from "hooks/useGetCurrentDragon"
+import { useGetDragonsById } from 'hooks/useGetCurrentDragon';
+import { Carusel } from 'components/Carusel/Carusel';
+import { DragonInfo } from 'components/DragonInfo/DragonInfo';
 
 export const DragonInfoPage = () => {
-    const dragon = useGetDragonsById()
-    console.log(dragon)
+  const dragon = useGetDragonsById();
 
-    return (
+  return (
+    <div className="wrapper">
+      {dragon && (
         <>
-            {/* <img src="" alt="" />
-            <h2></h2>
-            <p></p> */}
+          <div>
+            <h2>Model:<br/> {dragon.data.name}</h2>
+            <p>First flight: {dragon.data.first_flight}</p>
+            <p>{dragon.data.description}</p>
+          </div>
+          <div className="dragon-info">
+            <Carusel dragon={dragon} />
+            <DragonInfo dragon={dragon} />
+          </div>
         </>
-    )
-}
+      )}
+    </div>
+  );
+};

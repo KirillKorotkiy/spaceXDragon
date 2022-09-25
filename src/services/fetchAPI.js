@@ -1,3 +1,4 @@
+
 import axios from 'axios'
 
 axios.defaults.baseURL = 'https://api.spacexdata.com/v4/';
@@ -15,6 +16,7 @@ export const allDetailsDragon = async () => {
     const response = await axios.get(
         `dragons`
     );
+
     return response.data;
 }
 

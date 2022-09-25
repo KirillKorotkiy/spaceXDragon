@@ -6,9 +6,7 @@ export const LayoutPage = () => {
     return (
         <>
         <AppBar/>
-        <div className="wrapper">
         <Outlet/>
-        </div>
         </>
     )
 }
