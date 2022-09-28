@@ -1,5 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit';
-import { persistSliceDragons } from './sliceDragons';
+import { persistSliceAuth } from './sliceAuth';
 import {
   persistStore,
   FLUSH,
@@ -11,9 +11,10 @@ import {
 } from 'redux-persist';
 
 
+
 export const store = configureStore({
     reducer: {
-      dragons: persistSliceDragons,
+      auth: persistSliceAuth
     },
     middleware: getDefaultMiddleware => [ ...getDefaultMiddleware({
       serializableCheck: {

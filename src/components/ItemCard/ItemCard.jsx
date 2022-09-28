@@ -1,11 +1,13 @@
-import { Card } from "./ItemCard.styled";
+import { Card, Wrapper, Model } from "./ItemCard.styled";
+import { NavLink } from "./ItemCard.styled";
 
-export const ItemCard = ({ flickr_images, name, first_flight }) => {
+export const ItemCard = ({ flickr_images, name, id}) => {
   return (
-    <div>
+    <NavLink to={`info/${id}`}>
+    <Wrapper>
       <Card src={flickr_images[0]} alt={name} />
-      <h2>Model: {name}</h2>
-      <p>First flight: {first_flight}</p>
-    </div>
+      <Model>{name}</Model>
+    </Wrapper>
+    </NavLink>
   );
 };

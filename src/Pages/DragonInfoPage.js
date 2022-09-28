@@ -1,6 +1,7 @@
 import { useGetDragonsById } from 'hooks/useGetCurrentDragon';
 import { Carusel } from 'components/Carusel/Carusel';
 import { DragonInfo } from 'components/DragonInfo/DragonInfo';
+import { ModalTitle } from 'components/ModelTitle/ModalTitle';
 
 export const DragonInfoPage = () => {
   const dragon = useGetDragonsById();
@@ -9,11 +10,7 @@ export const DragonInfoPage = () => {
     <div className="wrapper">
       {dragon && (
         <>
-          <div>
-            <h2>Model:<br/> {dragon.data.name}</h2>
-            <p>First flight: {dragon.data.first_flight}</p>
-            <p>{dragon.data.description}</p>
-          </div>
+          <ModalTitle dragon={dragon}/>
           <div className="dragon-info">
             <Carusel dragon={dragon} />
             <DragonInfo dragon={dragon} />
@@ -23,3 +20,5 @@ export const DragonInfoPage = () => {
     </div>
   );
 };
+
+

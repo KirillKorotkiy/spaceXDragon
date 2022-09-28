@@ -1,0 +1,33 @@
+import { useDispatch } from "react-redux";
+import { getAuth, signOut } from "firebase/auth";
+import { clearFavorites } from "redux/sliceAuth";
+import { useLocation, Navigate } from 'react-router-dom';
+import { removeUser } from "redux/sliceAuth";
+
+export const LogOut = () => {
+    const dispatch = useDispatch();
+    const location = useLocation()
+    
+    const handleLogOut = () => {
+      const auth = getAuth();
+      signOut(auth)
+        .then(() => {
+          dispatch(removeUser());
+          dispatch(clearFavorites());
+        //   toast.success(<FormattedMessage id='seeYouSoon'/>);
+          <Navigate to="/" state={{ from: location }} />
+        })
+        .catch(error => {
+          // An error happened.
+          console.log(error);
+        });
+    };
+  
+    return <button onClick={() => handleLogOut()}>
+      {/* <FormattedMessage id='logOut'/> */}
+    </button>;
+
+
+
+
+}
