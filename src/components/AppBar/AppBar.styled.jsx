@@ -13,6 +13,8 @@ export const Header = styled.header`
 `;
 
 export const MainLogo = styled(Logo)`
+  display: flex;
+  align-items: center;
   width: 300px;
   height: 50px;
 `;
@@ -25,4 +27,7 @@ export const Links = styled(NavLink)`
     margin-right: 20px;
   }
 `;
-export const Navigation = styled.div``;
+export const Navigation = styled.div`
+  display: flex;
+  align-items: center;
+`;

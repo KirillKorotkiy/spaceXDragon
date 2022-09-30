@@ -10,7 +10,7 @@ export const DragonInfoPage = () => {
     <div className="wrapper">
       {dragon && (
         <>
-          <ModalTitle dragon={dragon}/>
+          <ModalTitle dragon={dragon} />
           <div className="dragon-info">
             <Carusel dragon={dragon} />
             <DragonInfo dragon={dragon} />
@@ -20,5 +20,3 @@ export const DragonInfoPage = () => {
     </div>
   );
 };
-
-

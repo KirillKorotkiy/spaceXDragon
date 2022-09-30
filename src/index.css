@@ -12,6 +12,7 @@ body {
   color: #ffffff;
   background-image: url(../public/img/space_x_background.jpg);
   background-size: cover;
+  background-repeat: no-repeat;
 }
 
 code {
@@ -31,34 +32,49 @@ ul {
   list-style: none;
 }
 
-li{
+li {
   text-decoration: none;
 }
 
-img{
+img {
   max-width: 100%;
   height: auto;
 }
 
-
 .slide-img {
   width: 800px;
   /* height: 700px; */
-
 }
-
 
 .wrapper {
   max-width: 1200px;
   margin: 0 auto;
+  padding: 0 15px;
 }
 
-.content{
+.content {
   display: flex;
   justify-content: space-around;
-  
 }
 
-.dragon-info{
+.dragon-info {
   display: flex;
+}
+
+@media (max-width: 1200px) {
+  .wrapper {
+    max-width: 900px;
+  }
+}
+
+@media (max-width: 768px) {
+  .content {
+    flex-direction: column;
+  }
+  .wrapper {
+    max-width: 360px;
+  }
+  .dragon-info {
+    display: block;
+  }
 }

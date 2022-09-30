@@ -1,25 +1,52 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const Title = styled.h2`
-    margin-bottom: 20px;
-    font-weight: 400;
-`
+  margin-bottom: 20px;
+  font-weight: 400;
+  font-size: 24px;
+  @media (max-width: 768px) {
+    /* font-size: 22px; */
+  }
+`;
 export const FirstFlight = styled.div`
-    margin-bottom: 20px;
-`
+  margin-bottom: 20px;
+`;
 export const WrapperTitle = styled.div`
-    margin-bottom: 40px;
-`
+  margin-bottom: 40px;
+`;
 export const Modal = styled.p`
-    font-size: 50px;
-    font-weight: 500;
-`
+  font-size: 34px;
+  font-weight: 500;
+  @media (max-width: 768px) {
+    /* font-size: 22px; */
+  }
+`;
 export const Description = styled.p`
-    line-height: 32px;
-`
+  line-height: 32px;
+  margin-bottom: 15px;
+  @media (max-width: 768px) {
+    font-size: 16px;
+    line-height: 24px;
+  }
+`;
 export const Date = styled.p`
-    font-size: 32px;
-`
+  font-size: 26px;
+`;
 export const FirstFlightTitle = styled.p`
-    margin-bottom: 15px;
-`
+  margin-bottom: 15px;
+  font-size: 22px;
+`;
+export const Button = styled.button`
+  width: 120px;
+  height: 40px;
+  font-size: 14px;
+  background-color: #000000;
+  border: 2px solid #ffffff;
+  color: #ffffff;
+  margin-bottom: 15px;
+  :hover {
+    border: none;
+    color: #000000;
+    background-color: #ffffff;
+  }
+`;

@@ -18,7 +18,7 @@ import {
   Button,
   Title,
   PasswordWrapper,
-} from '../components/LoginForm/LoginForm.styled';
+} from '../LoginForm/LoginForm.styled';
 
 // const schema = yup.object().shape({
 //     name: yup
@@ -91,34 +91,38 @@ export const RegisterForm = () => {
       onSubmit={handleSubmit}
     >
       <Wrapper>
-          <FormLogin autoComplete="off">
-            <Title>REGISTRATION</Title>
-            <label htmlFor="email">
-              <FieldLogin type="email" name="email" placeholder="Email..."/>
-            </label>
-            <label htmlFor="name">
-              <FieldLogin type="text" name="name" placeholder="Full Name..." />
-            </label>
-            <PasswordWrapper htmlFor="password">
-                <FieldLogin type={statePass ? 'text' : 'password'} name="password" placeholder="Password..." />
-                <BtnEye onClick={toggleBtn} type="button">
-                  {statePass ? <IoEyeOff /> : <IoEyeOutline />}
-                </BtnEye>
-            </PasswordWrapper>
-            <PasswordWrapper htmlFor="configPassword">
-                <FieldLogin
-                  type={statePassConfig ? 'text' : 'password'}
-                  name="configPassword"
-                  placeholder="Confirg password..."
-                />
-                <BtnEye type="button" onClick={toggleBtnConfig}>
-                  {statePassConfig ? <IoEyeOff /> : <IoEyeOutline />}
-                </BtnEye>
-            </PasswordWrapper>
-            <Button type="submit">Регистрация</Button>
-          </FormLogin>
-          <Link to="/login"></Link>
-    </Wrapper>
+        <FormLogin autoComplete="off">
+          <Title>REGISTRATION</Title>
+          <label htmlFor="email">
+            <FieldLogin type="email" name="email" placeholder="Email..." />
+          </label>
+          <label htmlFor="name">
+            <FieldLogin type="text" name="name" placeholder="Full Name..." />
+          </label>
+          <PasswordWrapper htmlFor="password">
+            <FieldLogin
+              type={statePass ? 'text' : 'password'}
+              name="password"
+              placeholder="Password..."
+            />
+            <BtnEye onClick={toggleBtn} type="button">
+              {statePass ? <IoEyeOff /> : <IoEyeOutline />}
+            </BtnEye>
+          </PasswordWrapper>
+          <PasswordWrapper htmlFor="configPassword">
+            <FieldLogin
+              type={statePassConfig ? 'text' : 'password'}
+              name="configPassword"
+              placeholder="Confirg password..."
+            />
+            <BtnEye type="button" onClick={toggleBtnConfig}>
+              {statePassConfig ? <IoEyeOff /> : <IoEyeOutline />}
+            </BtnEye>
+          </PasswordWrapper>
+          <Button type="submit">Регистрация</Button>
+        </FormLogin>
+        <Link to="/login"></Link>
+      </Wrapper>
     </Formik>
   );
 };
