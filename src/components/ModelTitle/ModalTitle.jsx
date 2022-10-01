@@ -2,7 +2,6 @@ import { useState } from 'react';
 import {
   Title,
   FirstFlight,
-  WrapperTitle,
   Modal,
   Description,
   Date,

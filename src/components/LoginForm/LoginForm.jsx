@@ -13,8 +13,8 @@ import {
   LinkToRegister,
   Title,
   BtnEye,
-  PasswordWrapper, 
-  NoAccount
+  PasswordWrapper,
+  NoAccount,
 } from './LoginForm.styled';
 
 const schema = yup.object().shape({
@@ -70,21 +70,18 @@ export const LoginForm = () => {
             <FieldLogin type="email" name="email" placeholder="Full Name..." />
           </label>
           <PasswordWrapper htmlFor="password">
-              <FieldLogin
-                type={statePass ? 'text' : 'password'}
-                name="password"
-                placeholder="Password..."
-              />
-              <BtnEye type="button" 
-                onClick={toggleBtn}
-               >  
+            <FieldLogin
+              type={statePass ? 'text' : 'password'}
+              name="password"
+              placeholder="Password..."
+            />
+            <BtnEye type="button" onClick={toggleBtn}>
               {statePass ? <IoEyeOff /> : <IoEyeOutline />}
-              </BtnEye>
+            </BtnEye>
           </PasswordWrapper>
           <Button type="submit">LOGIN</Button>
-          <NoAccount> I don`t have an account yet
-            </NoAccount>
-            <LinkToRegister to="/register">REGISTER</LinkToRegister>
+          <NoAccount> I don`t have an account yet</NoAccount>
+          <LinkToRegister to="/register">REGISTER</LinkToRegister>
         </FormLogin>
       </Wrapper>
     </Formik>

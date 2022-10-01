@@ -7,8 +7,9 @@ export const LogOutIcon = styled(Logo)`
 
 export const LogOutButton = styled.button`
   background-color: transparent;
-  width: 30px;
-  height: 30px;
+  border: none;
+  width: 40px;
+  height: 40px;
   transform: rotate(180deg);
   cursor: pointer;
 `;

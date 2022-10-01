@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 import { LogOut } from 'components/LogOut/LogOut';
 import { useMediaQuery } from 'hooks/useMediaQoery';
 import { BurgerMenu } from 'components/BurgerMenu/BurgerMenu';
+import { Link } from 'react-router-dom';
 
 export const AppBar = () => {
   let isPageWide = useMediaQuery('(min-width: 769px)');
@@ -12,7 +13,10 @@ export const AppBar = () => {
   return (
     <>
       <Header>
-        <MainLogo />
+        <Link to="/">
+          <MainLogo />
+        </Link>
+
         <Navigation>
           {isPageWide ? (
             isLoggedIn ? (

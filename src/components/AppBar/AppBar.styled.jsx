@@ -19,10 +19,9 @@ export const MainLogo = styled(Logo)`
   height: 50px;
 `;
 export const Links = styled(NavLink)`
-  font-size: 24px;
+  font-size: 20px;
   color: #ffffff;
   text-decoration: none;
-  font-weight: 600;
   :not(:last-child) {
     margin-right: 20px;
   }

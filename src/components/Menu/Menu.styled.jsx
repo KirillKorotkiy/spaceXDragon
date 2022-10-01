@@ -1,10 +1,44 @@
-import styled from "styled-components";
+import styled from 'styled-components';
+import { ReactComponent as Logo } from 'icons/cib-spacex.svg';
+
+export const MainLogo = styled(Logo)`
+  position: absolute;
+  left: -20px;
+  top: 4px;
+  width: 150px;
+  height: 50px;
+  fill: #ffffff;
+`;
+
+export const LogOutBtn = styled.button`
+  font-size: 24px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #ffffff;
+  background-color: transparent;
+  border: none;
+`;
 
 export const StyledMenu = styled.nav`
+  position: relative;
   display: none;
   flex-direction: column;
   justify-content: center;
-  background: linear-gradient(180deg, #090810 0%, #171236 100%);
+  background-image: linear-gradient(
+    to bottom,
+    #000000,
+    #000000,
+    #000000,
+    #000000,
+    #000000,
+    #181818,
+    #292929,
+    #3b3b3b,
+    #676767,
+    #969797,
+    #c8caca,
+    #fdffff
+  );
   height: 100vh;
   z-index: 1000;
   padding: 2rem;

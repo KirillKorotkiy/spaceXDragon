@@ -3,6 +3,8 @@ import { Form, Field } from 'formik';
 import { Link } from 'react-router-dom';
 
 export const Wrapper = styled.div`
+  width: 100%;
+  margin: 0 auto;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -10,9 +12,16 @@ export const Wrapper = styled.div`
 export const FormLogin = styled(Form)`
   display: flex;
   flex-direction: column;
-  flex-basis: 30%;
+  flex-basis: 40%;
   padding: 10px 20px;
   text-align: center;
+  @media (max-width: 768px) {
+    flex-basis: 100%;
+    height: 100vh;
+  }
+  @media (max-width: 1200px) {
+    height: 100vh;
+  }
 `;
 export const FieldLogin = styled(Field)`
   width: 100%;
@@ -26,7 +35,7 @@ export const FieldLogin = styled(Field)`
 
 export const Title = styled.h2`
   margin-bottom: 20px;
-`
+`;
 export const Button = styled.button`
   height: 35px;
   border: none;
@@ -62,12 +71,10 @@ export const LinkToRegister = styled(Link)`
   }
 `;
 
-
-
 export const BtnEye = styled.button`
-position: absolute;
-right: 5px;
-top: 6px;
+  position: absolute;
+  right: 5px;
+  top: 6px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -80,9 +87,9 @@ top: 6px;
 
 export const PasswordWrapper = styled.label`
   position: relative;
-`
+`;
 
 export const NoAccount = styled.p`
   margin-bottom: 15px;
   font-size: 18px;
-`
+`;

@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const Title = styled.h2`
   margin-bottom: 20px;
   font-weight: 400;
-  font-size: 24px;
+  font-size: 20px;
   @media (max-width: 768px) {
     /* font-size: 22px; */
   }
@@ -22,7 +22,7 @@ export const Modal = styled.p`
   }
 `;
 export const Description = styled.p`
-  line-height: 32px;
+  line-height: 26px;
   margin-bottom: 15px;
   @media (max-width: 768px) {
     font-size: 16px;
@@ -34,7 +34,7 @@ export const Date = styled.p`
 `;
 export const FirstFlightTitle = styled.p`
   margin-bottom: 15px;
-  font-size: 22px;
+  font-size: 20px;
 `;
 export const Button = styled.button`
   width: 120px;

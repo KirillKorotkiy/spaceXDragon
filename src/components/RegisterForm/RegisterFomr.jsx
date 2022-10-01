@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Formik, Form, Field } from 'formik';
-import * as yup from 'yup';
+import { Formik } from 'formik';
+// import * as yup from 'yup';
 import { useDispatch } from 'react-redux';
 import {
   getAuth,
@@ -119,7 +119,7 @@ export const RegisterForm = () => {
               {statePassConfig ? <IoEyeOff /> : <IoEyeOutline />}
             </BtnEye>
           </PasswordWrapper>
-          <Button type="submit">Регистрация</Button>
+          <Button type="submit">REGISTER</Button>
         </FormLogin>
         <Link to="/login"></Link>
       </Wrapper>
