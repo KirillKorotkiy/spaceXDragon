@@ -4,32 +4,41 @@ export const TechnicalOverview = styled.div`
   display: flex;
   flex-direction: column;
   flex-basis: 45%;
+  padding-bottom: 30px;
 `;
 export const InfoItem = styled.div`
-  font-size: 18px;
+  font-size: 16px;
   text-transform: uppercase;
-  font-weight: 700;
-  border-bottom: 1px solid rgb(134, 134, 134);
-  padding: 15px 0;
+  font-weight: 500;
+  border-bottom: 1px solid #ffff;
+  padding: 8px 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
   @media (max-width: 768px) {
-    font-size: 15px;
+    font-size: 14px;
   }
 `;
 export const Unit = styled.div`
   text-transform: lowercase;
-  color: rgb(134, 134, 134);
+  color: #ffff;
 `;
 export const TechnicalMain = styled.div`
-  margin-bottom: 35px;
+  margin-bottom: 25px;
 `;
 export const TechnicalTitle = styled.h2`
   text-transform: uppercase;
-  font-size: 22px;
-  margin-bottom: 15px;
+  font-size: 16px;
+  margin-bottom: 10px;
   @media (max-width: 768px) {
     font-size: 16px;
   }
+`;
+
+export const WikiLink = styled.a`
+  margin-top: 15px;
+  text-decoration: none;
+  color: #ffff;
+  font-size: 18px;
+  font-weight: 500;
 `;

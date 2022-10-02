@@ -4,6 +4,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 export const Swipe = styled(Swiper)`
   flex-basis: 50%;
   margin-bottom: 15px;
+  height: auto;
 `;
 
 export const SlideSwiper = styled(SwiperSlide)`
@@ -13,5 +14,9 @@ export const SlideSwiper = styled(SwiperSlide)`
 `;
 
 export const Img = styled.img`
-  width: 100%;
+  width: 80%;
+  height: 300px;
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 `;

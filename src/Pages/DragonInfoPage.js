@@ -3,7 +3,7 @@ import { Carusel } from 'components/Carusel/Carusel';
 import { DragonInfo } from 'components/DragonInfo/DragonInfo';
 import { ModalTitle } from 'components/ModelTitle/ModalTitle';
 
-export const DragonInfoPage = () => {
+const DragonInfoPage = () => {
   const dragon = useGetDragonsById();
 
   return (
@@ -20,3 +20,5 @@ export const DragonInfoPage = () => {
     </div>
   );
 };
+
+export default DragonInfoPage;

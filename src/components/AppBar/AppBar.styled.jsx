@@ -9,7 +9,7 @@ export const Header = styled.header`
   justify-content: space-between;
   align-items: center;
   background-color: transparent;
-  margin-bottom: 80px;
+  margin-bottom: 50px;
 `;
 
 export const MainLogo = styled(Logo)`

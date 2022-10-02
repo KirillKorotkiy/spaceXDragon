@@ -4,12 +4,17 @@ export const Title = styled.h2`
   margin-bottom: 20px;
   font-weight: 400;
   font-size: 20px;
+  padding-left: 50px;
   @media (max-width: 768px) {
-    /* font-size: 22px; */
+    padding: 0;
   }
 `;
 export const FirstFlight = styled.div`
   margin-bottom: 20px;
+  padding-left: 50px;
+  @media (max-width: 768px) {
+    padding: 0;
+  }
 `;
 export const WrapperTitle = styled.div`
   margin-bottom: 40px;
@@ -24,9 +29,11 @@ export const Modal = styled.p`
 export const Description = styled.p`
   line-height: 26px;
   margin-bottom: 15px;
+  padding-left: 50px;
   @media (max-width: 768px) {
     font-size: 16px;
     line-height: 24px;
+    padding: 0;
   }
 `;
 export const Date = styled.p`

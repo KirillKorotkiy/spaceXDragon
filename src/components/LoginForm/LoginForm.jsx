@@ -67,7 +67,7 @@ export const LoginForm = () => {
         <FormLogin autoComplete="off">
           <Title>LOGIN</Title>
           <label htmlFor="email">
-            <FieldLogin type="email" name="email" placeholder="Full Name..." />
+            <FieldLogin type="email" name="email" placeholder="Email..." />
           </label>
           <PasswordWrapper htmlFor="password">
             <FieldLogin

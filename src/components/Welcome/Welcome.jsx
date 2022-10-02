@@ -1,4 +1,4 @@
-import { DragonWelcome,  DragonTitle, Subscribe} from "./Welcome.styled";
+import { DragonWelcome, DragonTitle, Subscribe } from './Welcome.styled';
 
 export const Welcome = () => {
   return (

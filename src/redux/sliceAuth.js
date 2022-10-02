@@ -2,7 +2,6 @@ import { createSlice } from '@reduxjs/toolkit';
 import { persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 
-
 const initialState = {
   user: { name: null, email: null },
   token: null,
@@ -12,14 +11,11 @@ const initialState = {
   favorites: [],
 };
 
-
 const persistConfig = {
   key: 'root',
   storage,
   whitelist: ['dragons', 'user'],
 };
-
-
 
 export const authSlice = createSlice({
   name: 'auth',
@@ -45,16 +41,22 @@ export const authSlice = createSlice({
     setFavorites(state, { payload }) {
       state.favorites = payload;
     },
-    clearFavorites(state){
-      state.favorites = []
+    clearFavorites(state) {
+      state.favorites = [];
     },
-    
   },
 });
 
-export const { setAuthToken, removeUser, setUser, clearFavorites, setFavorites, setDragons} = authSlice.actions;
+export const {
+  setAuthToken,
+  removeUser,
+  setUser,
+  clearFavorites,
+  setFavorites,
+  setDragons,
+} = authSlice.actions;
 
-export const persistSliceAuth  = persistReducer(
+export const persistSliceAuth = persistReducer(
   persistConfig,
   authSlice.reducer
-)
+);

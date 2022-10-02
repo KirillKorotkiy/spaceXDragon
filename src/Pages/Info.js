@@ -1,5 +1,7 @@
 import { Outlet } from 'react-router-dom';
 
-export const Info = () => {
+const Info = () => {
   return <Outlet />;
 };
+
+export default Info;

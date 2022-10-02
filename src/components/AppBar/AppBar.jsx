@@ -22,6 +22,8 @@ export const AppBar = () => {
             isLoggedIn ? (
               <>
                 <BurgerMenu />
+                <Links to={'/personal'}>Settings</Links>
+                <Links to={'/favorites'}>Favorites</Links>
                 <LogOut />
               </>
             ) : (

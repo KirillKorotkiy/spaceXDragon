@@ -1,5 +1,4 @@
-import { useEffect } from 'react';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { allDetailsDragon } from 'services/fetchAPI';
 import { ItemCard } from 'components/ItemCard/ItemCard';
 import { useDispatch } from 'react-redux';
@@ -7,27 +6,31 @@ import { setDragons } from 'redux/sliceAuth';
 import { useSelector } from 'react-redux';
 import { authSelectors } from 'redux/authSelector';
 import { Welcome } from 'components/Welcome/Welcome';
-import { getAuth, onAuthStateChanged } from "firebase/auth";
+import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import { setUser } from 'redux/sliceAuth';
+import { useGetFavoritesItems } from 'hooks/useGetFavoritesItems';
 
-export const HomePage = () => {
+const HomePage = () => {
   const dispatch = useDispatch();
   const [allDragons, setAllDragons] = useState('');
-  const  dragons  = useSelector(authSelectors.getDragons);
+  const dragons = useSelector(authSelectors.getDragons);
 
-const auth = getAuth();
-  
-onAuthStateChanged(auth, (user) => {
-  console.log(user)
-  if (user) {
-    const uid = user.uid;
-    dispatch(setUser({
-      user: { name: user.name, email: user.email },
-      id: uid,
-    }))
-  } else {
-  }
-});
+  useGetFavoritesItems();
+
+  const auth = getAuth();
+
+  onAuthStateChanged(auth, user => {
+    if (user) {
+      const uid = user.uid;
+      dispatch(
+        setUser({
+          user: { name: user.name, email: user.email },
+          id: uid,
+        })
+      );
+    } else {
+    }
+  });
 
   useEffect(() => {
     !dragons.length
@@ -62,3 +65,5 @@ onAuthStateChanged(auth, (user) => {
     </div>
   );
 };
+
+export default HomePage;

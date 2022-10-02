@@ -3,6 +3,7 @@ import {
   InfoItem,
   Unit,
   TechnicalMain,
+  WikiLink,
   TechnicalTitle,
 } from './DragonIngo.styled';
 
@@ -10,7 +11,7 @@ export const DragonInfo = ({ dragon }) => {
   return (
     <>
       <TechnicalOverview>
-      <TechnicalTitle>General characteristics:</TechnicalTitle>
+        <TechnicalTitle>General characteristics:</TechnicalTitle>
         <TechnicalMain>
           <InfoItem>
             Height <Unit>{dragon.data.height_w_trunk.meters} m</Unit>
@@ -34,7 +35,8 @@ export const DragonInfo = ({ dragon }) => {
         <InfoItem>
           Material: <Unit> {dragon.data.heat_shield.material}</Unit>
         </InfoItem>
-        <a href={dragon.data.wikipedia}>Link to Wikipedia</a>
+
+        <WikiLink href={dragon.data.wikipedia}>Link to Wikipedia</WikiLink>
       </TechnicalOverview>
     </>
   );

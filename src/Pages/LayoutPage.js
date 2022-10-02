@@ -1,7 +1,7 @@
 import { AppBar } from 'components/AppBar/AppBar';
 import { Outlet } from 'react-router-dom';
 
-export const LayoutPage = () => {
+const LayoutPage = () => {
   return (
     <>
       <AppBar />
@@ -11,3 +11,5 @@ export const LayoutPage = () => {
     </>
   );
 };
+
+export default LayoutPage;
