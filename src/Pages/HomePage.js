@@ -9,6 +9,7 @@ import { Welcome } from 'components/Welcome/Welcome';
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import { setUser } from 'redux/sliceAuth';
 import { useGetFavoritesItems } from 'hooks/useGetFavoritesItems';
+import { Outlet } from 'react-router-dom';
 
 const HomePage = () => {
   const dispatch = useDispatch();
@@ -46,23 +47,26 @@ const HomePage = () => {
   }, []);
 
   return (
-    <div className="wrapper">
-      <Welcome />
-      <div className="content">
-        {allDragons &&
-          allDragons.map(({ flickr_images, name, first_flight, id }) => {
-            return (
-              <ItemCard
-                key={id}
-                id={id}
-                flickr_images={flickr_images}
-                name={name}
-                first_flight={first_flight}
-              />
-            );
-          })}
+    <>
+      <div className="wrapper">
+        <Welcome />
+        <div className="content">
+          {allDragons &&
+            allDragons.map(({ flickr_images, name, first_flight, id }) => {
+              return (
+                <ItemCard
+                  key={id}
+                  id={id}
+                  flickr_images={flickr_images}
+                  name={name}
+                  first_flight={first_flight}
+                />
+              );
+            })}
+        </div>
       </div>
-    </div>
+      <Outlet />
+    </>
   );
 };
 

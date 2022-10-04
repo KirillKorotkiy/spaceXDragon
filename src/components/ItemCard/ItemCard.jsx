@@ -39,7 +39,7 @@ export const ItemCard = ({ flickr_images, name, id }) => {
 
   return (
     <Container>
-      <NavLink to={`info/${id}`}>
+      <NavLink to={`/${id}`}>
         <Wrapper>
           <Card src={flickr_images[0]} alt={name} />
           <Model>{name}</Model>

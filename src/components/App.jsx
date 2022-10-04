@@ -4,14 +4,13 @@ import { lazy } from 'react';
 import { RequireAuth } from 'hoc/RequireAuth';
 import { Suspense } from 'react';
 import { Loader } from './Loader/Loader';
-import SwiperCore, { Autoplay } from 'swiper';
 
 const HomePage = lazy(() => import('../pages/HomePage'));
 const LayoutPage = lazy(() => import('../pages/LayoutPage'));
 const LoginPage = lazy(() => import('../pages/LoginPage'));
 const RegisterPage = lazy(() => import('../pages/RegisterPage'));
 const DragonInfoPage = lazy(() => import('../pages/DragonInfoPage'));
-const Info = lazy(() => import('../pages/Info'));
+// const Info = lazy(() => import('../pages/Info'));
 const PersonalSettingsPage = lazy(() =>
   import('../pages/PersonalSettingsPage')
 );
@@ -56,9 +55,7 @@ export const App = () => {
                 </RequireAuth>
               }
             />
-
-            <Route path="info" element={<Info />} />
-            <Route path="info/:infoId" element={<DragonInfoPage />} />
+            <Route path="/:infoId" element={<DragonInfoPage />} />
           </Route>
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>

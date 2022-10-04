@@ -1,18 +1,19 @@
 import { useGetFavoritesItems } from 'hooks/useGetFavoritesItems';
 import { ItemCard } from 'components/ItemCard/ItemCard';
-import { allDetailsDragon } from 'services/fetchAPI';
-import { useState } from 'react';
+import { authSelectors } from 'redux/authSelector';
+import { useSelector } from 'react-redux';
+import { useEffect, useState } from 'react';
+import { useMemo } from 'react';
 
 export const FavoritesCards = () => {
   const { items } = useGetFavoritesItems();
   const ids = items.flatMap(item => item.id);
-  const [dragons, setDragons] = useState('');
+  const favoritesId = useSelector(authSelectors.getFavorites);
+  // const dispatch = useDispatch()
+  const dragons = useSelector(authSelectors.getDragons);
+  const [favorites, setFavorites] = useState([]);
 
-  allDetailsDragon()
-    .then(res => setDragons(res))
-    .catch(err => console.log(err));
-
-  const findFavoritesCards = () => {
+  function findFavoritesCards() {
     const result = [];
     for (let i = 0; i < ids.length; i++) {
       for (let j = 0; j < dragons.length; j++) {
@@ -22,7 +23,19 @@ export const FavoritesCards = () => {
       }
     }
     return result;
-  };
+  }
+
+  // const favoritesCards = useMemo(() => {
+  //   const result = [];
+  //   for (let i = 0; i < ids.length; i++) {
+  //     for (let j = 0; j < dragons.length; j++) {
+  //       if (ids[i] === dragons[j].id) {
+  //         result.push(dragons[j]);
+  //       }
+  //     }
+  //   }
+  //   return result;
+  // }, [ids, dragons]);
 
   return (
     <div className="content">
